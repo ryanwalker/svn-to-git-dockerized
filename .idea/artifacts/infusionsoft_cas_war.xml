@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="infusionsoft-cas:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="cas.war">
+      <element id="artifact" artifact-name="infusionsoft-cas:war exploded" />
+    </root>
+  </artifact>
+</component>

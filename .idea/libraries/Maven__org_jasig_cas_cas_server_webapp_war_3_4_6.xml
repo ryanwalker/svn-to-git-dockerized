@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jasig.cas:cas-server-webapp:war:3.4.6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jasig/cas/cas-server-webapp/3.4.6/cas-server-webapp-3.4.6.war!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jasig/cas/cas-server-webapp/3.4.6/cas-server-webapp-3.4.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jasig/cas/cas-server-webapp/3.4.6/cas-server-webapp-3.4.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
