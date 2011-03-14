@@ -61,11 +61,4 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>ja-sig</id>
-            <url>http://oss.sonatype.org/content/repositories/releases/</url>
-        </repository>
-    </repositories>
-
 </project>
