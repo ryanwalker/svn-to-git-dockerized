@@ -13,6 +13,17 @@
         <version>0.5.0.36</version>
     </parent>
 
+    <properties>
+        <cas.version>3.4.6</cas.version>
+    </properties>
+
+    <!-- Source control configuration -->
+    <scm>
+        <connection>scm:svn:https://scm.infusiontest.com/svn/infusionsoft-cas/tags/cas-1.0</connection>
+        <developerConnection>scm:svn:https://scm.infusiontest.com/svn/infusionsoft-cas/tags/cas-1.0</developerConnection>
+        <url>https://scm.infusiontest.com/svn/infusionsoft-cas/tags/cas-1.0</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
@@ -28,8 +39,49 @@
                     <warName>cas</warName>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-idea-plugin</artifactId>
+                <configuration>
+                    <overwrite>false</overwrite>
+                    <exclude>dist,target,overlays</exclude>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!--
+            CONTINUOUS PROFILE: This profile is meant to be used when executing tests on the CI server
+            (Bamboo).
+        -->
+        <profile>
+            <id>continuous</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <testFailureIgnore>true</testFailureIgnore>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- RELEASE PROFILE -->
+        <profile>
+            <id>release</id>
+            <!-- Override default/development properties -->
+            <properties>
+                <output.filename.mapping>@{groupId}@.@{artifactId}@-@{version}@.@{extension}@</output.filename.mapping>
+                <strip.versions>false</strip.versions>
+                <use.compression>true</use.compression>
+                <add.artifact.descriptors>true</add.artifact.descriptors>
+                <filtering.enabled>false</filtering.enabled>
+            </properties>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -41,10 +93,6 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <cas.version>3.4.6</cas.version>
-    </properties>
-
     <repositories>
         <repository>
             <id>ja-sig</id>
@@ -52,9 +100,4 @@
         </repository>
     </repositories>
 
-  <scm>
-    <connection>scm:svn:https://scm.infusiontest.com/svn/tools/maven/infusionsoft-pom/tags/cas-1.0</connection>
-    <developerConnection>scm:svn:https://scm.infusiontest.com/svn/tools/maven/infusionsoft-pom/tags/cas-1.0</developerConnection>
-    <url>https://scm.infusiontest.com/svn/tools/maven/infusionsoft-pom/tags/cas-1.0</url>
-  </scm>
 </project>
