@@ -10,5 +10,6 @@ docker build --tag=svn2git .
 mkdir /project/to/convert
 cd /project/to/convert
 
-#### Run the conversion tool. See https://github.com/nirvdrum/svn2git for all the available svn2git options.
+#### Run the conversion tool. 
+(See https://github.com/nirvdrum/svn2git for all the available svn2git options)
 ./svn2git svn2git https://path/to/repo/to/convert
