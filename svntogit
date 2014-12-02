@@ -1,0 +1,9 @@
+#!/bin/bash
+
+docker run \
+    -v $(pwd):/src \
+    --workdir=/src \
+    --rm \
+    -a stdout -a stderr -i \
+    svn2git:latest \
+    "$@"
