@@ -1,7 +1,7 @@
 svn-to-git-dockerized
 =====================
 
-Tool to convert an svn repo to a git repo, dockerized, using the svn2git tool. 
+With only 1 dependency (Docker), you can convert svn repos to git repos. 
 
 A Dockerfile is used to create an image with all the needed svn2git dependencies. This image is then used in the svn2git executable. The executable is a wrapper around a docker run command. The docker run command mounts the current host directory into the container and then allows you to run svn2git (https://github.com/nirvdrum/svn2git). 
 
