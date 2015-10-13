@@ -9,13 +9,17 @@ The only dependency is docker.
 
 A vagrant file is also included if you want to run this in a vagrant box.
 
-#### Build an the docker image that contains the svn conversion tool and dependencies
-docker build --tag=svn2git .
+#### Pull the svn2git docker image
+docker pull ryandocker/svn2git
 
 #### Create a directory where you want the newly converted repo to reside.
 mkdir /project/to/convert
+
 cd /project/to/convert
 
-#### Run the conversion tool. 
-(See https://github.com/nirvdrum/svn2git for all the available svn2git options)
-./svn2git svn2git https://path/to/repo/to/convert
+#### Run the svn2git tool. 
+See https://github.com/nirvdrum/svn2git for all the available svn2git options.
+
+Example:
+
+./svn2git https://path/to/repo/to/convert
