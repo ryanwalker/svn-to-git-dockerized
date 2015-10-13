@@ -5,5 +5,5 @@ docker run \
     --workdir=/src \
     --rm \
     -a stdout -a stderr -i \
-    svn2git:latest \
-    "$@"
+    ryandocker/svn2git:latest \
+    svn2git "$@"
